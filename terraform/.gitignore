@@ -1,0 +1,7 @@
+.terraform
+adminKey.pub
+devKey.pub
+*.tfstate
+*.tfstate.*
+*.tfvars
+/ansible/export_keys.sh
