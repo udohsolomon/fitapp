@@ -4,4 +4,4 @@ devKey.pub
 *.tfstate
 *.tfstate.*
 *.tfvars
-./ansible/export_keys.sh
+/ansible/export_keys.sh
