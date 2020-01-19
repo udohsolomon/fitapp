@@ -4,4 +4,4 @@
 /terraform/*.tfstate
 /terraform/*.tfstate.*
 /terraform/*.tfvars
-/ansible/export_keys.sh
+/ansible/export*
