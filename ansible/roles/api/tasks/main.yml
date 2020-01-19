@@ -9,7 +9,7 @@
         group: "ubuntu"
         mode: 0644
 
-- name: Get fitcycle PID
+- name: Get fitapp PID
   shell: "ps -ef | grep -v grep | grep -w api_server.py | awk '{print $2}'"
   register: api_py_process
 

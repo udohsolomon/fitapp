@@ -47,6 +47,7 @@ variable "PATH_TO_DEV_PRIVATE_KEY" {
 
 variable "INSTANCE_USERNAME" {
 }
+
 variable "RDS_DATABASE" {
 }
 

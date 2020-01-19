@@ -128,7 +128,7 @@ resource "aws_instance" "app2" {
 
 resource "aws_instance" "web1" {
     ami                         = var.AMIS["web"]
-    instance_type               = "t2.micro"
+    instance_type               = "t2.medium"
     subnet_id                   = aws_subnet.public-web-az-a.id
     vpc_security_group_ids      = [aws_security_group.web_sg.id]
     key_name                    = aws_key_pair.dev_ssh_key.id
@@ -148,7 +148,7 @@ resource "aws_instance" "web1" {
 
 resource "aws_instance" "web2" {
     ami                         = var.AMIS["web"]
-    instance_type               = "t2.micro"
+    instance_type               = "t2.medium"
     subnet_id                   = aws_subnet.public-web-az-a.id
     vpc_security_group_ids      = [aws_security_group.web_sg.id]
     key_name                    = aws_key_pair.dev_ssh_key.id
@@ -226,18 +226,18 @@ resource "aws_instance" "mgmt" {
 
 # Provides an AWS EBS Volume Attachment as a top level resource, to attach and detach volumes from AWS Instances.
 resource "aws_ebs_volume" "ebs_volume_extra" {
-    availability_zone   = var.AWS_REGION
+    availability_zone   = "us-east-1a"
     size                = 10
-    storage_type        = "gp2"
+    type                = "gp2"
     tags = {
         Name            = "Extra volume for data"
     }
 }
 
 resource "aws_volume_attachment" "ebs_att" {
-    device_name         = "/dev/sdh"
-    volume_id           = var.aws_ebs_volume.ebs_volume_extra.id 
-    instance_id         = var.aws_instance.mgmt.id
+    device_name         = "/dev/xvda"
+    volume_id           = aws_ebs_volume.ebs_volume_extra.id 
+    instance_id         = aws_instance.mgmt.id
 }
 
 

@@ -1,0 +1,7 @@
+/terraform/.terraform
+/terraform/adminKey.pub
+/terraform/devKey.pub
+/terraform/*.tfstate
+/terraform/*.tfstate.*
+/terraform/*.tfvars
+/ansible/export_keys.sh
