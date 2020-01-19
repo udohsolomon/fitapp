@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export AWS_ACCESS_KEY = "AKIAJ26EURFUMJVENOYA"    
-export AWS_SECRET_KEY = "7//awKFPczLgeoNyw4aZ4m+Khf6JEWXYtPA6N8Eu"
+export AWS_ACCESS_KEY = "Your aws acess key here"    
+export AWS_SECRET_ACCESS_KEY = "Your aws secret here"
